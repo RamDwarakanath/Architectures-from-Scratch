@@ -4,3 +4,6 @@ In this repository I implement Architectures, either from Papers or other source
 
 The Architectures so far include:
  - Transfomer (Decoder-only) (in progress)
+
+
+I will also verify that I get the same results from the Numpy-only and Pytorch implementations.
