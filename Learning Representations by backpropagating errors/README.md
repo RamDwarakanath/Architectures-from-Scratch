@@ -25,11 +25,11 @@ At this point there are some key terminology that I want to highlight that are d
  - state: the value of the unit, for the inputs its the given value, for the hidden units its the value after the linear combination of inputs and the non-linear transformation.
  - threshold: it's the value above which the neuron activates (e.g. outputs 1)
  - bias: a term added to the linear combination of the inputs. b = -T, since sum(x_i * w_i) > T
- - unit: represents a neuron which is the output of linear combination + non-lineanr transformation
+ - unit: represents a neuron which is the output of linear combination + non-linear transformation
 
-The computing process is explained mathematically as follows. Each unit gets a linear combination of the i inputs, $$y_i is all the inputs and the output for the linear combination is eq1. Then the output undergoes a non-linear transformation based on the equation. 
+The computing process is explained mathematically as follows. Each unit gets a linear combination of the i inputs, y_i is all the inputs and the output for the linear combination is sum(x_i * w_i) + b. Then the output undergoes a non-linear transformation based on the sigmoid equation ($\sigma(x) = \frac{1}{1 + e^{-x}}$) in this case.
 
-Input (y_i) -> Linear Combination -> Non-Linear Transformation (x_j)
+Input (y_i) -> Linear Combination (x_j) -> Non-Linear Transformation (y_j)
 y is the input for the unit and x is the output. i is the ith input and j is the jth unit (neuron).
 
 
