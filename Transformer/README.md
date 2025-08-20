@@ -26,7 +26,7 @@ There are many interesting aspects of the Transformer to understand but here are
  - MultiHeadAttention
    - MultiHeadAttention allows the model to learn multiple relationships between a token and its context. This is important in areas such as Language since there are many layers to the meaning of a word in its context. Further, MultiHeadAttention is a highly parallelizable operation thanks to the appropriate arranged of QKV matrices (large linear matrix) and taking advantage of tensor maniputation using .view() and .transpose().
    - After MultiHeadAttention there is a linear projection layer so that the MLP doesn't just receive the segregated inputs from each head but instead they are combined in some way.
- - MLP
-   - 
  - Causal Masking
- - Parallel Training of Examples
+   - Causal Masking is fundamental to how a transformer works in the context of Language Language Models (LLMs). Using matrix tricks ('tril' -> torch.tril()) we can tell the model to ignore the attention computed for tokens in the future. By doing this in a triangular fashion we can simultaneously create mutliple training example from one set of tokens.
+ - MLP
+   - The MLP after MultiHeadAttention allows the model to 'think' about the context-aware representations of the tokens. Very important to note that the MLP acts on each token representation separately, there is no communication between them. So we can think of the attention as the 'communication' and the MLP as the 'thinking'.
